@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karl GUI — Tanz-Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <h1>🕺 Karl <span>Tanz-Studio</span></h1>
+        <div class="topbar-actions">
+            <button id="themeToggle" class="icon-btn" aria-label="Design wechseln">☀️</button>
+            <span id="status" class="status-pill">Nicht verbunden</span>
+            <button id="connectBtn" class="btn primary">Calliope verbinden</button>
+        </div>
+    </header>
+
+    <main class="layout">
+        <section class="panel">
+            <h2>Moves</h2>
+            <p class="hint">Klicke auf einen Move, um ihn deinem Tanz hinzuzufügen.</p>
+            <div class="palette-blocks">
+                <button class="block move-1" data-move="1">Move 1</button>
+                <button class="block move-2" data-move="2">Move 2</button>
+                <button class="block move-3" data-move="3">Move 3</button>
+                <button class="block move-4" data-move="4">Move 4</button>
+                <button class="block move-5" data-move="5">Move 5</button>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="builder-head">
+                <h2>Dein Tanz</h2>
+                <button id="clearBtn" class="btn ghost small">Alles löschen</button>
+            </div>
+            <ol id="sequence" class="sequence"></ol>
+            <div class="controls">
+                <label class="check">
+                    <input type="checkbox" id="loopChk">
+                    Tanz wiederholen (Loop)
+                </label>
+                <button id="stopBtn" class="btn ghost" disabled>■ Stopp</button>
+                <button id="sendBtn" class="btn primary big" disabled>▶ Tanz senden</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
