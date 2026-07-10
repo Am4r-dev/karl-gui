@@ -19,6 +19,13 @@ const sendBtn = document.getElementById('sendBtn');
 const stopBtn = document.getElementById('stopBtn');
 const paletteButtons = document.querySelectorAll('.block[data-move]');
 
+// Move-Namen aus den Palette-Buttons übernehmen — umbenennen
+// braucht man sie also nur an einer Stelle: in der index.html
+const MOVE_NAMES = {};
+paletteButtons.forEach((btn) => {
+    MOVE_NAMES[btn.dataset.move] = btn.textContent.trim();
+});
+
 /* ---------- Theme ---------- */
 
 function applyTheme(theme) {
@@ -246,7 +253,7 @@ function renderSequence() {
 
         const label = document.createElement('span');
         label.className = 'label';
-        label.textContent = 'Move ' + move;
+        label.textContent = MOVE_NAMES[move] || ('Move ' + move);
 
         const remove = document.createElement('button');
         remove.className = 'remove';
